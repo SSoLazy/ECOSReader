@@ -12,9 +12,14 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/SSoLazy/OpenECOSReader",
-    packages=setuptools.find_packages(),
+    packages=['.'],
     classifiers=[
         "Programming Language :: Python :: 3",
     ],
     python_requires='>=3.6',
+    install_requires=[
+
+    ],
+    package_data={'exampleproject': ['data/schema.json']}
+
 )
