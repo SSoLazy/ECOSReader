@@ -5,7 +5,7 @@ import logging
 
 
 class ECOSReader():
-    def __init__(self, api_key, warning=True, language='kr'):
+    def __init__(self, api_key, warning=False, language='kr'):
         self.apikey = api_key
         self.warning = warning
         self.language = language
@@ -27,7 +27,7 @@ class ECOSReader():
 
             return pd.DataFrame(ret_json[api_item]['row'])
         except Exception as e:
-            return ret_json
+            raise ValueError(ret_json)
 
 
     def satatistic(self, from_num=1, to_num=1000):
